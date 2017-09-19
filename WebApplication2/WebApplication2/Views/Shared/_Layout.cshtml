@@ -1,0 +1,67 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <script src="https://use.fontawesome.com/e429eea54f.js"></script>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/myscript")
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("eGOV.com", "Index", "Home", new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                    <li>@Html.ActionLink("About", "Index", "Home", protocol: null, hostName: null, fragment: "mission", routeValues: null, htmlAttributes: null)</li>
+                    <li>@Html.ActionLink("Services", "Index", "Home", protocol: null, hostName: null, fragment: "services", routeValues: null, htmlAttributes: null)</li>
+                    <li>@Html.ActionLink("Contact", "Index", "Home", protocol: null, hostName: null, fragment: "contact", routeValues: null, htmlAttributes: null)</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    @Html.Partial("_Carousel")
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - ASP.NET Application by Olga Korpacheva</p>
+            <p>Photos are from www.pexels.com, authors: Scott Webb, Leah Kelley, Snapwire</p>
+        </footer>
+    </div>
+    <div class="container body-content">
+        <div class="page" id="contact">
+            <h3>With any questions please contact me:</h3>
+            <address>
+                Olga Korpacheva<br />
+                Prague, Czech Republic<br />
+                <abbr title="Phone">P:</abbr>
+                +420 775-347-496
+            </address>
+
+            <address>
+                <strong>Email:</strong>   <a href="mailto:imkarpacz@gmail.com">imkarpacz@gmail.com</a><br />
+
+            </address>
+        </div>
+    </div>
+
+        @Scripts.Render("~/bundles/jquery")
+        @Scripts.Render("~/bundles/bootstrap")
+        @Scripts.Render("~/bundles/myscript")
+        @RenderSection("scripts", required: false)
+</body>
+</html>
